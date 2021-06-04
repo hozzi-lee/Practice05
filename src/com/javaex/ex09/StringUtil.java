@@ -2,7 +2,7 @@ package com.javaex.ex09;
 
 public class StringUtil {
 
-	private static String concatString;
+	private static String concatString = "";
 
 	// 메소드
 	public static String concatString(String[] strArray) {
