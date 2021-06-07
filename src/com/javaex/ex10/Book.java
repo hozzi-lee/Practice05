@@ -6,7 +6,7 @@ public class Book {
 	private int bookNo;
 	private String title;
 	private String author;
-	private int stateCode;
+	private int stateCode = 1;
 
 
 	// 생성자
@@ -17,7 +17,7 @@ public class Book {
 	}
 
 	public Book(int stateCode) {
-		this.stateCode = 1;
+		this.stateCode = stateCode;
 	}
 
 
@@ -60,21 +60,18 @@ public class Book {
 			System.out.println(books[i]);
 		}
 	}
-	 */	
-
+	 */
 
 	public void rent() {
-		this.stateCode = 0;
+		//		this.stateCode = 0;
 		System.out.println(getTitle() + "이(가) 대여 됐습니다");
 	}
 
-	public void print(Book[] books) {
-		for ( int i = 0; i < books.length; i++ ) {
-			if ( stateCode == 1 ) {
-				System.out.println(books[i] + "대여 유무: 재고있음");
-			} else {
-				System.out.println(books[i] + "대여 유무: 대여중");
-			}
+	public void print() {
+		if ( stateCode == 1 ) {
+			System.out.println(getBookNo() + ", " + getTitle() + ", " + getAuthor() + "대여 유무: 재고있음");
+		} else if ( stateCode == 0 ) {
+			System.out.println(getBookNo() + ", " + getTitle() + ", " + getAuthor() + "대여 유무: 대여중");
 		}
 	}
 

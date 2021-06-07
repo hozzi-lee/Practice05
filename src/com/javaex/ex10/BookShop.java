@@ -31,6 +31,8 @@ public class BookShop {
 			if ( num == i+1 ) {
 				books[i].rent();
 				books[i].setStateCode(0);
+			} else {
+				books[i].setStateCode(1);
 			}
 		}
 
@@ -44,7 +46,7 @@ public class BookShop {
 	private static void displayBookInfo(Book[] books) {
 		//코드작성
 		for ( int i = 0; i < books.length; i++ ) {
-			System.out.println(books[i]);
+			books[i].print();
 		}
 
 	}
